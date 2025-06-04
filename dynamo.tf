@@ -46,13 +46,13 @@ resource "aws_dynamodb_table_item" "example_item" {
     "__typename": {"S": "Hazchat3"},
     "swms": {"L": [
         {"M": {
-            "id": {"S": "83FAAFD6-FB8D-11ED-BE56-0242AC120002"},
+            "id": {"S": "19FAAAB6-A8A8-B2B2-BE56-012345670002"},
             "letter": {"S": "A"},
             "title": {"S": "Trenching and Excavations"},
             "url": {"S": "swms/R328_Trenching and Excavations SWMS.pdf"}
         }},
         {"M": {
-            "id": {"S": "83FAA34C-FB8D-11ED-BE56-0242AC120002"},
+            "id": {"S": "21EAA34C-1234-ABCD-BE34-0242AC121234"},
             "letter": {"S": "A"},
             "title": {"S": "Working On or Near Exposed Live Parts"},
             "url": {"S": "swms/R323_Working On or Near Exposed Live Parts SWMS.pdf"}
