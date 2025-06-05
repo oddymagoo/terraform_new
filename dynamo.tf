@@ -1,5 +1,5 @@
-resource "aws_dynamodb_table" "hazchat_3_app_content_table_dev" {
-  name         = "hazchat-3-app-content-table-dev"
+resource "aws_dynamodb_table" "hc3_app_content_table_dev" {
+  name         = "hc3-app-content-table-dev"
   billing_mode = "PAY_PER_REQUEST"
   #deletion_protection_enabled = "true"
   hash_key = "createdAt"
@@ -29,8 +29,8 @@ resource "aws_dynamodb_table" "hazchat_3_app_content_table_dev" {
 
 
 resource "aws_dynamodb_table_item" "example_item" {
-  table_name = aws_dynamodb_table.hazchat_3_app_content_table_dev.name
-  hash_key   = aws_dynamodb_table.hazchat_3_app_content_table_dev.hash_key
+  table_name = aws_dynamodb_table.hc3-app-content-table-dev.name
+  hash_key   = aws_dynamodb_table.hc3-app-content-table-dev.hash_key
 
   item = <<ITEM
   {
@@ -46,7 +46,7 @@ resource "aws_dynamodb_table_item" "example_item" {
     "__typename": {"S": "Hazchat3"},
     "swms": {"L": [
         {"M": {
-            "id": {"S": "19FAAAB6-A8A8-B2B2-BE56-012345670002"},
+            "id": {"S": "22FAAAB6-A8A8-B2B2-BE56-012345670002"},
             "letter": {"S": "A"},
             "title": {"S": "Trenching and Excavations"},
             "url": {"S": "swms/R328_Trenching and Excavations SWMS.pdf"}
@@ -71,7 +71,7 @@ resource "aws_dynamodb_table_item" "example_item" {
     id         = "11111111-1111-1111-1111-111111111111", # String
     isDeleted  = false,                                  # Boolean
     version    = 3,                                      #Number
-    __typename = "Hazchat3"                              # String
+    __typename = "hc3"                                   # String
   })
 }
 
@@ -93,7 +93,7 @@ resource "aws_dynamodb_table_item" "example_item" {
     ] #List
 --
         editors = [], #List
-        hazchatType = "HAZCHAT", # String
+        chatType = "HZCHAT", # String
         hvLiveWork = {}, # Map
         images = [],
         isDeleted = false, # Boolean 
@@ -112,7 +112,7 @@ resource "aws_dynamodb_table_item" "example_item" {
         updatedAt = "2020-02-02T02:02:02.202Z", # String
         verify = {}, # Map
         version = 3, #Number
-        __typename = "Hazchat3"# String
+        __typename = "hc3"# String
 
 
 */
