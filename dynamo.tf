@@ -27,10 +27,10 @@ resource "aws_dynamodb_table" "hc3_app_content_table_dev" {
   }
 }
 
-
+aws_dynamodb_table.hc3_app_content_table_dev
 resource "aws_dynamodb_table_item" "example_item" {
-  table_name = aws_dynamodb_table.hc3-app-content-table-dev.name
-  hash_key   = aws_dynamodb_table.hc3-app-content-table-dev.hash_key
+  table_name = aws_dynamodb_table.hc3_app_content_table_dev.name
+  hash_key   = aws_dynamodb_table.hc3_app_content_table_dev.hash_key
 
   item = <<ITEM
   {
