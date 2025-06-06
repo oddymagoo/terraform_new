@@ -1,38 +1,3 @@
-resource "aws_iam_role" "lambda_exec_role" {
-  name = "helloworld_iam_role_cxv7h834njsa"
-  assume_role_policy = jsonencode({
-    Version = "2012-10-17",
-    Statement = [{
-      Action = "sts:AssumeRole",
-      Effect = "Allow",
-      Principal = {
-        Service = "lambda.amazonaws.com"
-      }
-    }]
-  })
-}
-
-resource "aws_iam_role_policy" "lambda_logging" {
-  name = "lambda-logging-policy"
-  role = aws_iam_role.lambda_exec_role.id
-
-  policy = jsonencode({
-    Version = "2012-10-17",
-    Statement = [
-      {
-        Effect = "Allow",
-        Action = [
-          "logs:CreateLogGroup",
-          "logs:CreateLogStream",
-          "logs:PutLogEvents"
-        ],
-        Resource = "*"
-      }
-    ]
-  })
-}
-
-#dynamodb = hc3_app_content_table_dev
 resource "aws_lambda_function" "hello_world_function" {
   function_name = "helloworld"
   role          = aws_iam_role.lambda_exec_role.arn
@@ -45,8 +10,13 @@ resource "aws_lambda_function" "hello_world_function" {
   environment {
     variables = {
       DYNAMODB_TABLE = "hc3_app_content_table_dev"
+      #When using SNS, update the following:
       #PLATFORM_ENDPOINT = "arn:aws:sns:ap-southeast-2:252152158302:app/APNS/hazchat3-prod"
     }
+  }
+  
+  logging_config {
+    log_format = "Text"
   }
 
   timeout     = 10
