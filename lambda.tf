@@ -55,7 +55,7 @@ resource "aws_lambda_function" "hello_world_function" {
 
 resource "aws_lambda_event_source_mapping" "dynamodb_trigger" {
   #event_source_arn  = "arn:aws:dynamodb:ap-southeast-2:252152158302:table/hazchat-3-person-table-prod/stream/latest"
-  event_source_arn                   = aws_dynamodb_table.hc3_app_content_table_dev.arn
+  event_source_arn                   = aws_dynamodb_table.hc3_app_content_table_dev.stream_arn
   function_name                      = aws_lambda_function.hello_world_function.arn
   starting_position                  = "LATEST"
   batch_size                         = 100
