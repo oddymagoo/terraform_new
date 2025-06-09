@@ -58,7 +58,7 @@ resource "aws_wafv2_web_acl" "waf_acl" {
     }
   }
 
-    rule {
+  rule {
     name     = "AWSManagedRulesKnownBadInputs"
     priority = 2
 
