@@ -1,0 +1,8 @@
+AppSync
+---
+WAF
+---
+Amplify
+---
+CloudWatch <-- built into each service
+
