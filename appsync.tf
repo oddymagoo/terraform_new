@@ -1,4 +1,4 @@
-resource "aws_appsync_graphql_api" "hz3-graphql" {
+resource "aws_appsync_graphql_api" "hz3_graphql" {
   api_type             = "GRAPHQL"
   authentication_type  = "AMAZON_COGNITO_USER_POOLS"
   introspection_config = "ENABLED"
