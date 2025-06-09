@@ -156,8 +156,8 @@ resource "aws_wafv2_web_acl" "waf_acl" {
 
     statement {
       rate_based_statement {
-        limit              = 4000
-        aggregate_key_type = "IP"
+        limit                 = 4000
+        aggregate_key_type    = "IP"
         evaluation_window_sec = 300
       }
     }
