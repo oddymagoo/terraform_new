@@ -84,6 +84,6 @@ resource "aws_cognito_user_pool_client" "hz3_user_pool_client" {
     refresh_token = "days"
   }
 
-  user_pool_id = aws_cognito_user_pool.hz3_user_pool.name
+  user_pool_id = aws_cognito_user_pool.hz3-user-pool.name
 
 }
