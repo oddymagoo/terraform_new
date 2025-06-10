@@ -1,4 +1,4 @@
-resource "aws_cognito_user_pool" "hz3_user_pool" {
+resource "aws_cognito_user_pool" "hz3-user-pool" {
   /*
   account_recovery_setting {
     recovery_mechanism {
