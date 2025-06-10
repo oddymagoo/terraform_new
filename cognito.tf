@@ -1,5 +1,7 @@
+
+/*
 resource "aws_cognito_user_pool" "hz3-user-pool" {
-  /*
+
   account_recovery_setting {
     recovery_mechanism {
       name     = "admin_only"
@@ -12,7 +14,7 @@ resource "aws_cognito_user_pool" "hz3-user-pool" {
   }
 
   deletion_protection = "INACTIVE"
-  */
+
 
   email_configuration {
     email_sending_account = "COGNITO_DEFAULT"
@@ -87,3 +89,5 @@ resource "aws_cognito_user_pool_client" "hz3_user_pool_client" {
   user_pool_id = aws_cognito_user_pool.hz3-user-pool.name
 
 }
+
+*/
