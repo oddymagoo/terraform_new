@@ -8,6 +8,10 @@ resource "aws_dynamodb_table" "hc3_app_content_table_dev" {
     name = "createdAt"
     type = "S"
   }
+  attribute {
+    name = "id"
+    type = "S"
+  }
 
   point_in_time_recovery {
     enabled                 = true
