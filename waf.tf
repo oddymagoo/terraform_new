@@ -1,5 +1,5 @@
 resource "aws_wafv2_web_acl" "waf_acl" {
-  name        = "haz-waf-acl"
+  name        = "haz-waf-acl-${var.environment}"
   description = "WAF ACL with GeoMatch and RateLimit rules"
   scope       = "REGIONAL" # Use "CLOUDFRONT" for Cloudfront, otherwise REGIONAL for ALB, API Gateway, etc.
   default_action {
