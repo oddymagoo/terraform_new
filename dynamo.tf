@@ -1,5 +1,6 @@
 resource "aws_dynamodb_table" "hc3_app_content_table_dev" {
-  name         = "hc3-app-content-table-dev"
+  #name         = "hc3-app-content-table-dev"
+  name         = "hazchat-3-table-${var.environment}"
   billing_mode = "PAY_PER_REQUEST"
   #deletion_protection_enabled = "true"
   hash_key = "createdAt"
