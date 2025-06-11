@@ -14,6 +14,14 @@ resource "aws_dynamodb_table" "hc3_app_content_table_dev" {
     type = "S"
   }
 
+  global_secondary_index {
+    hash_key        = "createdAt"
+    name            = "byCreatedAt"
+    projection_type = "ALL"
+    read_capacity   = "0"
+    write_capacity  = "0"
+  }
+
   point_in_time_recovery {
     enabled                 = true
     recovery_period_in_days = 35
